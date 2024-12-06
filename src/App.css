@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  z-index: 1;
+  font-size: 3em;
+  text-align: center;
+  color: #fff;
+}
+
+/* Snowflake base style */
+.snowflake {
+  position: fixed;
+  top: -50px;
+  color: white;
+  font-size: 1em;
+  opacity: 0.8;
+  pointer-events: none;
+  user-select: none;
+  animation: fall linear infinite;
+}
+
+/* Falling animation with slight drift */
+@keyframes fall {
+  to {
+    transform: translateX(var(--horizontal-drift)) translateY(100vh)
+      rotate(var(--rotation));
+  }
+}
+
+/* Lens flare effect style */
+.flare {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+}
+
+/* Blurred snowflake for depth */
+.blurred {
+  filter: blur(2px);
+  opacity: 0.5;
+}
+
+/* Music Player Styling */
+.music-player-container {
+  display: flex;
+  align-items: center; /* Aligns the player and text horizontally */
+  margin-top: 20px;
+  z-index: 5;
+}
+
+.music-player {
+  margin-right: 10px; /* Space between player and text */
+}
+
+.song-title {
+  font-size: 1.5em;
+  color: white;
+  text-align: left;
+  z-index: 5;
+}
